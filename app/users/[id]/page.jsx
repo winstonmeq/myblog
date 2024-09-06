@@ -38,7 +38,7 @@ const Page = ({params}) => {
     
         fetchIncident()
     
-      }, []);
+      }, [params.id]);
 
 
 

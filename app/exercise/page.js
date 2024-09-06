@@ -3,7 +3,7 @@
 import { useState } from "react"
 
 
-const page = () => {
+const Page = () => {
 
     const [temp, setTemp] = useState(0)
     const [f, setF] = useState(0)
@@ -26,4 +26,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
