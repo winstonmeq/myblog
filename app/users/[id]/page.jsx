@@ -1,11 +1,10 @@
 
 'use client'
-import React from 'react'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 
-const page = ({params}) => {
+const Page = ({params}) => {
 
 
 
@@ -16,6 +15,8 @@ const page = ({params}) => {
   const router = useRouter();
 
   useEffect(() => {
+
+    localStorage.setItem('userId', params.id);
 
     
     const fetchIncident = async () => {
@@ -67,14 +68,18 @@ const page = ({params}) => {
         }
       };
 
-      const onClose =()=> {
+
+
+  const onClose =()=> {
+
         router.push('/')
+
       }
 
 
 
   return (
-    <div className="inset-0 z-50 flex items-center justify-center">
+    <div className="inset-0 z-50 flex items-center  justify-center">
     <div className="bg-white rounded-lg shadow-lg w-full p-6">
       <h2 className="text-2xl font-bold mb-4 text-center">Update</h2>
       <form onSubmit={handleUpdate}>
@@ -120,10 +125,11 @@ const page = ({params}) => {
             Cancel
           </button>
         </div>
+   
       </form>
     </div>
   </div>
   )
 }
 
-export default page
+export default Page

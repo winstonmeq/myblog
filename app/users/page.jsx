@@ -1,20 +1,17 @@
 
 
 'use client'
-import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
 import RegistrationModal from './userRegistration'
 import Link from 'next/link'
+import UpdateUser from './[id]/page'
 
-const page = () => {
+const Page = () => {
 
 const [users, setUsers] = useState([])
 const [isModalOpen, setIsModalOpen] = useState(false);
-const [userId, setUserId] = useState();
-
-const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
 
 
 
@@ -78,7 +75,8 @@ const fetchIncident = async () => {
 
             <td className='px-6 py-4 border-b border-gray-400'>{items._id}</td>    
              
-             <td><Link href={`/users/${items._id}`}><button>Edit</button></Link></td>       
+             <td><Link href={`/users/${items._id}`}><button>Edit</button></Link></td>
+       
 
         </tr>
         
@@ -94,4 +92,5 @@ const fetchIncident = async () => {
   )
 }
 
-export default page
+
+export default Page

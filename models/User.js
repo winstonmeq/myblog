@@ -2,7 +2,6 @@
 
 import {Schema, model, models} from 'mongoose'
 
-
 const UserSchema = new Schema ({
 
     username:{
@@ -10,19 +9,15 @@ const UserSchema = new Schema ({
         unique:[true,'Username already exists'],
         required: [true, 'username is required']
     },
-
     password: {
         type:String,
         required:[true, 'password is required!'],
         // match:[/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/, 'password invalid, it should contain, 8-20  alphanumeric letters and be unique']
     },
-
     superAdmin: {
         type: Boolean,
     },
        
-   
-
 });
 
 const User = models.User || model("User",UserSchema);

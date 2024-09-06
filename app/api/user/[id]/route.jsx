@@ -36,21 +36,14 @@ export async function DELETE(request, {params}) {
 
     try {
 
-      const id = params.id 
-    
+      const id = params.id    
        
-      console.log(id)
-
-
-      await connectToDB();
-      
-  
+          await connectToDB();
+        
      await User.findByIdAndDelete(id);
-      
- 
+       
       return new Response(JSON.stringify('User deleted successfully'))
-      
-  
+        
     } catch (error) {
     
      return new Response('POST Error nih pre!');
@@ -65,7 +58,6 @@ export async function DELETE(request, {params}) {
 export const PUT = async (Request, {params}) => {
     try {
       
-     
   
       const {username, password, superAdmin } = await Request.json();
 

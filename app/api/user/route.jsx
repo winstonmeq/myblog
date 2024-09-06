@@ -6,8 +6,6 @@ import { NextResponse } from "next/server";
 import { Types } from "mongoose";
 
 
-
-
 export const GET = async () => {
 
     try{
@@ -31,11 +29,8 @@ export const GET = async () => {
 
 export const POST = async (Request) => {
   try {
-
     const body = await Request.json();
-
-    await connectToDB();
-
+       await connectToDB();
     const newUser = new User(body);
 
     await newUser.save();

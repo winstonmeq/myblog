@@ -56,6 +56,8 @@ export const POST = async (Request) => {
 
     const body = await Request.json();
 
+    console.log(body)
+
     await connectToDB();
 
     const newCategory = new Category(body);
